@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: laravel
+
+  php:
+    build: .
+    volumes:
+     - ./src:/var/www/html
+    ports:
+     - '8000:8000'
+    depends_on:
+      - mysql
