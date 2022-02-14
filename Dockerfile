@@ -15,6 +15,6 @@ RUN docker-php-ext-configure gd --enable-gd --with-jpeg
 
 RUN docker-php-ext-install pdo pdo_mysql gd
 
-COPY docker-entrypoint.sh /tmp
+# COPY docker-entrypoint.sh /tmp
 
-CMD [ "/tmp/docker-entrypoint.sh" ]
+# CMD [ "/tmp/docker-entrypoint.sh" ]
