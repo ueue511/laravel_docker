@@ -1,6 +1,6 @@
 FROM php:7.4-fpm
 
-COPY --from=composer:1.10.12 /usr/bin/composer /usr/bin/composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 RUN apt-get update && \
     apt-get install -y \
